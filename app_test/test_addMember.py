@@ -64,8 +64,15 @@ class TestDemo:
 
     def test_removeMember(self):
         self.driver.find_element(MobileBy.XPATH,"//*[@text='通讯录']").click()
-        self.driver.find_element(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/gup']").click()
-        sleep(2)
-        self.driver.find_element(MobileBy.XPATH,"//*[@text='test003']").click()
-        self.driver.find_element(MobileBy.XPATH,"//*[@text='删除成员']").click()
-        self.driver.find_element(MobileBy.XPATH,"//*[@text='确定']").click()
+
+        # self.driver.find_element(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/gup']").click()
+        # sleep(2)
+        # self.driver.find_element(MobileBy.XPATH,"//*[@text='test003']").click()
+        # self.driver.find_element(MobileBy.XPATH,"//*[@text='删除成员']").click()
+        # self.driver.find_element(MobileBy.XPATH,"//*[@text='确定']").click()
+        self.driver.find_element(MobileBy.ID, "com.tencent.wework:id/igk").click()
+        self.driver.find_element(MobileBy.XPATH, "//*[@text='搜索']").send_keys("test003")
+        elelist=self.driver.find_elements(MobileBy.XPATH, "//*[@text='test003']")
+        #find_elements方法返回的是一个列表[element1,element2...]
+        if len(elelist)>1:
+            elelist[1].click()
