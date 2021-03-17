@@ -18,7 +18,7 @@ class BasePage:
     def finds(self, locator, value):
         logging.info("finds")
         logging.info(locator, value)
-        self.driver.find_elements(locator, value)
+        return self.driver.find_elements(locator, value)
 
     def swipe_find(self, text):
         while True:

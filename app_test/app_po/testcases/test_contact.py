@@ -1,4 +1,5 @@
 import yaml
+from appium.webdriver.common.mobileby import MobileBy
 
 from app_test.app_po.page.app import App
 
@@ -12,18 +13,20 @@ class TestContact:
         pass
 
     def test_addcontact(self):
-        name="test006"
-        phone="13855667706"
+        name="test002"
+        phone="13855667702"
         editpage=self.main.goto_addressList().click_addcontact().addcontact_manual()
         editpage.edit_contact(name,phone)
         editpage.verify_ok()
 
     def test_delcontact(self):
-        name="test005"
-        phone="13855667705"
-        editpage=self.main.goto_addressList().click_addcontact().addcontact_manual()
-        editpage.edit_contact(name,phone)
-        editpage.verify_ok()
+        name="test001"
+        ele=self.main.goto_addressList()
+        ele.search_and_click(name).more_info().edit_info().del_member()
+        # ele.find(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/gej']").click()
+        # ele.check_del_ok(name)
+
+
 
     def test_yaml(self):
         with open("../datas/caps.yml") as f:
