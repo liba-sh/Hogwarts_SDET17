@@ -35,7 +35,7 @@ class TestAddress:
         info=self.address.get_information(self.user_id)
         assert info["name"]==self.name
 
-    @pytest.mark.parametrize("user_id,new_name",[("tmp",name+"tmp")]*30)
+    @pytest.mark.parametrize("user_id,new_name",[("tmp",name+"tmp")]*5)
     def test_update_member(self,user_id,new_name):
         user_id=self.user_id
         self.address.create_member(user_id,self.name,self.mobile,self.department)
