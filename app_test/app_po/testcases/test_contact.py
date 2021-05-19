@@ -13,8 +13,8 @@ class TestContact:
         pass
 
     def test_addcontact(self):
-        name="test002"
-        phone="13855667702"
+        name="test001"
+        phone="13855667701"
         editpage=self.main.goto_addressList().click_addcontact().addcontact_manual()
         editpage.edit_contact(name,phone)
         editpage.verify_ok()
@@ -23,6 +23,7 @@ class TestContact:
         name="test001"
         ele=self.main.goto_addressList()
         ele.search_and_click(name).more_info().edit_info().del_member()
+        # print(ele)
         # ele.find(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/gej']").click()
         # ele.check_del_ok(name)
 

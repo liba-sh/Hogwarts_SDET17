@@ -21,6 +21,8 @@ class BasePage:
         return self.driver.find_elements(locator, value)
 
     def swipe_find(self, text):
+        logging.info("swipe_find")
+        logging.info(text)
         while True:
             try:
                 element = self.driver.find_element(MobileBy.XPATH, f"//*[@text='{text}']")
@@ -35,3 +37,4 @@ class BasePage:
                 end_x = start_x
                 end_y = height * 0.2
                 self.driver.swipe(start_x, start_y, end_x, end_y, 1000)
+

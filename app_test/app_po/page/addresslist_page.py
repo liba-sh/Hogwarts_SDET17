@@ -25,9 +25,12 @@ class AddressListPage(BasePage):
         self.finds(MobileBy.XPATH, f"//*[@text='{name}']")[1].click()
         return PersonInfoPage(self.driver)
 
+    #校验功能未完善，待续
     def check_del_ok(self,name):
+        self.find(MobileBy.XPATH, "//*[@resource-id='com.tencent.wework:id/gej']").click()
         self.find(MobileBy.XPATH,"//*[@text='搜索']").send_keys(name)
         sleep(5)
         eles=self.finds(MobileBy.XPATH,f"\\*[@text='{name}']")
+        print(eles)
         print(len(eles))
         # return len(eles)==1
