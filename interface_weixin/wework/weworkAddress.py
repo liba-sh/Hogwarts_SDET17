@@ -1,6 +1,6 @@
 import requests
 
-from test_requests.wework.base import Base
+from interface_weixin.wework.base import Base
 
 
 class WeworkAddress(Base):

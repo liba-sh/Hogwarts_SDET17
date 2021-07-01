@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from login_page.register_page import RegisterPage
+from ui_weixin.login_page.register_page import RegisterPage
 
 
 class LoginPage:

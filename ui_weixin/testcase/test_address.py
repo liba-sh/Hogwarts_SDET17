@@ -1,6 +1,6 @@
 from time import sleep
 
-from address_page.main_page import MainPage
+from ui_weixin.address_page.main_page import MainPage
 
 
 class TestAddress:

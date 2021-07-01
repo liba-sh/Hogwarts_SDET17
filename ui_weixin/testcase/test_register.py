@@ -1,6 +1,6 @@
 from time import sleep
 
-from login_page.main_page import MainPage
+from ui_weixin.login_page import MainPage
 
 
 class TestRegister:

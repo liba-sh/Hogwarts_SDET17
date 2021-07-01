@@ -1,6 +1,6 @@
 import pytest
 
-from test_requests.wework.weworkAddress import WeworkAddress
+from interface_weixin.wework.weworkAddress import WeworkAddress
 
 
 class TestAddress:

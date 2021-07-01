@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from address_page.address_page import AddressPage
+from ui_weixin.address_page import AddressPage
 
 
 class MainPage:
