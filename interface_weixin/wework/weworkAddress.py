@@ -12,9 +12,9 @@ class WeworkAddress(Base):
         :param userid:
         :return:
         """
-        params={"userid":user_id}
-        url='https://qyapi.weixin.qq.com/cgi-bin/user/get'
-        r=self.send("GET",url,params=params)
+        params = {"userid":user_id}
+        url = 'https://qyapi.weixin.qq.com/cgi-bin/user/get'
+        r = self.send("GET",url,params=params)
         return r.json()
 
     def create_member(self,user_id:str,name:str,mobile:str,department:str):

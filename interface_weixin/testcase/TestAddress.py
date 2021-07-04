@@ -28,18 +28,17 @@ class TestAddress:
         assert r["name"]==self.name
 
     def test_create_member(self):
-        #数据处理
+
         r=self.address.create_member(self.user_id,self.name,self.mobile,self.department)
         assert  r.get("errmsg")=="created"
         #断言
         info=self.address.get_information(self.user_id)
         assert info["name"]==self.name
 
-    @pytest.mark.parametrize("user_id,new_name",[("tmp",name+"tmp")]*5)
+    @pytest.mark.parametrize("user_id,new_name",[("tmp",name+"tmp")]*2)
     def test_update_member(self,user_id,new_name):
-        user_id=self.user_id
+        user_id = self.user_id
         self.address.create_member(user_id,self.name,self.mobile,self.department)
-
         r=self.address.update(user_id,new_name)
         assert  r.get("errmsg")=="updated"
         #断言
